@@ -2,22 +2,24 @@
 	position: absolute;
 	top: 15%;
 	left: 50%;
+	display: inline-grid;
 }
 
 .searchBar > .searchInputs {
-	height: 8vh;
+	height: max-content;
 	transform: translateX(-50%);
 	position: relative;
 	display: inline-block;
+	margin-bottom: 0;
 }
 
 .searchBar > .searchInputs > input{
 	float: left;
-	height: 100%;
+	height: 8vh;
 	width: 24vw;
-	border-radius: 13px 0 0 13px;
+	border-radius: 15px 0 0 15px;
 	padding: 0.8vh;	
-	padding-left: 25px;
+	padding-left: 3vw;
 	border: none;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 500;
@@ -44,15 +46,17 @@
 .searchBar > .searchInputs > .searchButtons{
 	float: right;
 	display: flex;
-	height: 100%;
+	height: 8vh;
 	width: 6vw;
 	padding: 0.8vh;
 	border: 100px;
 	align-items: center;
 	align-self: flex-start;
-	border-radius: 0 13px 13px 0;
+	border-radius: 0 15px 15px 0;
 	background: rgba(299, 299, 299, 0.2);
 }
+
+
 
 .searchBar > .searchInputs > .searchButtons > .gpsIcon{
 	flex: 1;
@@ -62,12 +66,21 @@
 
 }
 
-.searchBar > .searchInputs > .searchButtons > .gpsIcon:hover{
+.searchBar > .searchInputs > .searchButtons > .gpsIcon > button{
+	margin: 0;
+	padding: 0;
+	width: min-content;
+	color: inherit;
+	background-color: inherit;
+	border: none;
+}
+
+.searchBar > .searchInputs > .searchButtons > .gpsIcon > button:hover{
 	color: rgb(20, 49, 212);
 	cursor: pointer;
 }
 
-.searchBar > .searchInputs > .searchButtons > .gpsIcon:focus{
+.searchBar > .searchInputs > .searchButtons > .gpsIcon > button:focus{
 	outline: none;
 	border: none;
 }
@@ -78,13 +91,55 @@
 	color: rgb(59, 227, 180);
 }
 
+.searchBar > .searchInputs > .searchButtons > .searchIcon > button{
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	background-color: inherit;
+	width: min-content;
+	border: none;
+}
 
-.searchBar > .searchInputs > .searchButtons > .searchIcon:focus{
+.searchBar > .searchInputs > .searchButtons > .searchIcon > button:focus{
 	outline: none;
 	border: none;
 }
 
-.searchBar > .searchInputs > .searchButtons > .searchIcon:hover{
+.searchBar > .searchInputs > .searchButtons > .searchIcon > button:hover{
 	color: rgb(20, 49, 212);
 	cursor: pointer;
+}
+
+
+
+
+
+.searchBar > .searchResults{
+	height: max-content;
+	margin-top: 0;
+	padding-bottom: 1vh;
+	border-radius: 0 0 30px 30px;
+	transform: translateX(-50%);
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+	background: rgba(299, 299, 299, 0.2);
+	color: rgb(60, 235, 185);
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.searchBar > .searchResults > a{
+	color: rgb(35, 35, 211);
+	font-size: larger;
+	text-decoration: none;
+}
+
+.searchBar > .searchResults > a:hover{
+	color: rgb(180, 180, 255);
+}
+
+.searchBar > .searchResults > a > p{
+	padding: 0;
+	padding-left: 5vw;
+	text-decoration: none;
 }
