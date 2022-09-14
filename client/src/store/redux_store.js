@@ -18,7 +18,7 @@ const sliceFn = createSlice({
         sunset: 1662726061,
         timezone: 19800,
         visibility: 10000,
-        weather: {description: "overcast clouds", icon: "04n", main: "Clouds"},
+        weather: [{main: "Clouds", description: "overcast clouds", icon: "04n"}],
         wind: {speed: 1.86, deg: 134, gust: 2.71}
         
     }},

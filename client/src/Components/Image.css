@@ -1,0 +1,16 @@
+.weatherIcon{
+    position: relative;
+    width: 70%;
+    height: 80%;
+}
+
+.icon{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+}
+
+img{
+    pointer-events: none;
+}
