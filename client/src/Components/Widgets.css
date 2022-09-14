@@ -1,5 +1,32 @@
-.weatherCard{
+.leftCard{
     position: absolute;
-	top: 35%;
+	top: 32%;
+	left: 18%;
+	height: 33vh;
+	width: 35vw;
+	background: rgba(299, 299, 299, 0.1);
+	border-radius: 30px;
+	backdrop-filter: blur(20px);
+}
+
+.rightCard{
+    position: absolute;
+	top: 32%;
+	right: 18%;
+	height: 33vh;
+	width: 25vw;
+	background: rgba(299, 299, 299, 0.1);
+	border-radius: 30px;
+	backdrop-filter: blur(20px);
+}
+
+.forecastCard{
+	position: absolute;
+	top: 70%;
 	left: 20%;
+	height: 15vh;
+	width: 60vw;
+	background: rgba(299, 299, 299, 0.1);
+	border-radius: 30px;
+	backdrop-filter: blur(20px);
 }

@@ -11,6 +11,7 @@
 	position: relative;
 	display: inline-block;
 	margin-bottom: 0;
+	backdrop-filter: blur(25px);
 }
 
 .searchBar > .searchInputs > input{
@@ -126,6 +127,8 @@
 	color: rgb(60, 235, 185);
 	overflow: hidden;
 	overflow-y: auto;
+	z-index: 2;
+	backdrop-filter: blur(25px);
 }
 
 .searchBar > .searchResults > a{

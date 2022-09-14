@@ -35,6 +35,20 @@ const sliceFn = createSlice({
             state.widgetData.coord.lat = action.payload.coord.lat;
             state.widgetData.coord.lon = action.payload.coord.lon;
             state.widgetData.name = action.payload.name;
+            state.widgetData.temp = action.payload.main.temp;
+            state.widgetData.feels_like = action.payload.main.temp;
+            state.widgetData.temp_min = action.payload.main.temp_min;
+            state.widgetData.temp_max = action.payload.main.temp_max;
+            state.widgetData.pressure = action.payload.main.pressure;
+            state.widgetData.grnd_level = action.payload.main.grnd_level;
+            state.widgetData.humidity = action.payload.main.humidity;
+            state.widgetData.country = action.payload.sys.country;
+            state.widgetData.sunrise = action.payload.sys.sunrise;
+            state.widgetData.sunset = action.payload.sys.sunset;
+            state.widgetData.timezone = action.payload.timezone;
+            state.widgetData.visibility = action.payload.visibility;
+            state.widgetData.weather = action.payload.weather;
+            state.widgetData.wind = action.payload.wind;
         }
     }
 });
