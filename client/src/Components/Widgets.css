@@ -1,3 +1,11 @@
+div{
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	color: rgb(199, 199, 255);
+
+}
+
 .leftCard{
     position: absolute;
 	top: 32%;
@@ -7,6 +15,57 @@
 	background: rgba(299, 299, 299, 0.1);
 	border-radius: 30px;
 	backdrop-filter: blur(20px);
+}
+
+.firHalf{
+	position: relative;
+	width: 55%;
+	height: 100%;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.secHalf{
+	display: inline-block;
+	width: 45%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.leftCard > .firHalf > .weatherStatus{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.leftCard > .secHalf > .currentTemp{
+	position: absolute;
+	font-family: 'Poppins', sans-serif;
+	top: 5%;
+	font-size: 90px;
+	margin: 0;
+	padding: 0;
+}
+
+.leftCard > .secHalf > .tempRange{
+	position: absolute;
+	font-family: 'Poppins', sans-serif;
+	font-size: 22px;
+	top: 58%;
+	margin: 0;
+	padding: 0;
+}
+
+.leftCard > .secHalf >.weatherLocation{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 75%;
+	transform: translateX(3%);
 }
 
 .rightCard{

@@ -32,6 +32,7 @@ const sliceFn = createSlice({
             state.searchKeyword = action.payload;
         },
         setWidgetData(state, action){
+            console.log(action.payload);
             state.widgetData.coord.lat = action.payload.coord.lat;
             state.widgetData.coord.lon = action.payload.coord.lon;
             state.widgetData.name = action.payload.name;

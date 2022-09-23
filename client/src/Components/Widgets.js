@@ -19,9 +19,15 @@ function Widgets(){
     return(
         <div>
             <div className='leftCard'>
-                <Image imageURL={'cloud.png'}></Image>
-                <p>{widgetData.weather[0].main}</p>
-                <p>{widgetData.name}</p>
+                <div className='firHalf'>
+                    <Image className='mainIcon' imageURL={'cloud.png'}></Image>
+                    <p className='weatherStatus'>{widgetData.weather[0].main}</p>
+                </div>
+                <div className='secHalf'>
+                    <p className='currentTemp'>{Math.floor(widgetData.temp)}<span style={{fontSize: '40px', verticalAlign: 'top', lineHeight: '90px'}}>&deg;</span><span style={{fontSize: '60px'}}>C</span></p>
+                    <p className='tempRange'>&#8593; {widgetData.temp_max} &nbsp; &#8595; {widgetData.temp_min}</p>
+                    <p className='weatherLocation'>{widgetData.name}, {widgetData.country}</p>
+                </div>
             </div>
             <div className='rightCard'>
 

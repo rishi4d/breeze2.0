@@ -1,14 +1,14 @@
 .weatherIcon{
     position: relative;
-    width: 70%;
+    width: 60%;
     height: 80%;
+    left: 50%;
 }
 
 .icon{
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     height: 100%;
+    transform: translateX(-50%);
 }
 
 img{
