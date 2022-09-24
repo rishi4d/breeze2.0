@@ -9,7 +9,8 @@ const sliceFn = createSlice({
         feels_like: 26.41, 
         temp_min: 26.41, 
         temp_max: 26.41, 
-        pressure: 1007, 
+        pressure: 1007,
+        sea_level: 1002, 
         grnd_level: 1002,
         humidity: 91, 
         name: "Medinīpur",
@@ -17,10 +18,10 @@ const sliceFn = createSlice({
         sunrise: 1662681341,
         sunset: 1662726061,
         timezone: 19800,
-        visibility: 10000,
+        visibility: 10670,
         weather: [{main: "Clouds", description: "overcast clouds", icon: "04n"}],
-        wind: {speed: 1.86, deg: 134, gust: 2.71}
-        
+        wind: {speed: 1.86, deg: 134, gust: 2.71},
+        cloudcover: 100
     }},
     reducers: {
         setSearchResults(state, action){
@@ -42,6 +43,7 @@ const sliceFn = createSlice({
             state.widgetData.temp_max = action.payload.main.temp_max;
             state.widgetData.pressure = action.payload.main.pressure;
             state.widgetData.grnd_level = action.payload.main.grnd_level;
+            state.widgetData.sea_level = action.payload.main.sea_level;
             state.widgetData.humidity = action.payload.main.humidity;
             state.widgetData.country = action.payload.sys.country;
             state.widgetData.sunrise = action.payload.sys.sunrise;
@@ -50,8 +52,8 @@ const sliceFn = createSlice({
             state.widgetData.visibility = action.payload.visibility;
             state.widgetData.weather = action.payload.weather;
             state.widgetData.wind = action.payload.wind;
+            state.widgetData.cloudcover = action.payload.clouds.all;
         }
-
     }
 });
 
