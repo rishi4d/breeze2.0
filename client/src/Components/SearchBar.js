@@ -83,14 +83,28 @@ function SearchBar({placeholder}){
 
     const fetchWeatherData = (lat, lng) => {
         const apiKey = '0e7091f685572031515151c75d4d1057';
+        let currentWeatherData = {};
+
         let URL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lng + '&units=metric&appid=' + apiKey;
         fetch(URL)
         .then((res) => res.json())
         .then((response) => {
             console.log(response);
             document.querySelector('.searchInputs > input').value = response.name;
-            dispatch(action.setWidgetData(response));
+            currentWeatherData = response;
+            dispatch(action.setWidgetData(currentWeatherData));
         })
+        /*
+        let URL2 = 'https://api.openweathermap.org/data/2.5/forecast/daily?lat='+ lat +'&lon='+ lng +'&cnt=1&appid=' + apiKey;
+        fetch(URL)                  //Created bcz of API limitation
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res);
+            currentWeatherData.main.temp_min = res.list.temp.min;
+            currentWeatherData.main.temp_max = res.list.temp.max;
+            dispatch(action.setWidgetData(currentWeatherData));
+        })
+        */
     }
 
     /* This fn was added to hide the searchResults on clicking elsewhere. Doesn't work as intended.

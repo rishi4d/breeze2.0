@@ -25,7 +25,7 @@ function Widgets(){
                 </div>
                 <div className='secHalf'>
                     <p className='currentTemp'>{Math.floor(widgetData.temp)}<span style={{fontSize: '40px', verticalAlign: 'top', lineHeight: '90px'}}>&deg;</span><span style={{fontSize: '60px'}}>C</span></p>
-                    <p className='tempRange'>&#8593; {widgetData.temp_max} &nbsp; &#8595; {widgetData.temp_min}</p>
+                    <p className='tempRange'>&#8593; {widgetData.temp_max.toFixed(1)}<span style={{fontSize: '16px'}}>C</span> &nbsp; &#8595; {widgetData.temp_min.toFixed(1)}<span style={{fontSize: '16px'}}>C</span></p>
                     <p className='weatherLocation'>{widgetData.name}, {widgetData.country}</p>
                 </div>
             </div>

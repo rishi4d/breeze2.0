@@ -3,7 +3,6 @@ div{
 	font-weight: 600;
 	font-size: 20px;
 	color: rgb(199, 199, 255);
-
 }
 
 .leftCard{
@@ -40,6 +39,12 @@ div{
 	padding: 0;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	font-size: 24px;
+}
+
+.leftCard > .firHalf > .mainIcon{
+	margin: 0;
+	padding: 0;
 }
 
 .leftCard > .secHalf > .currentTemp{
@@ -54,10 +59,11 @@ div{
 .leftCard > .secHalf > .tempRange{
 	position: absolute;
 	font-family: 'Poppins', sans-serif;
+	font-weight: 800;
 	font-size: 22px;
-	top: 58%;
+	top: 55%;
 	margin: 0;
-	padding: 0;
+	padding: 0.5% 0;
 }
 
 .leftCard > .secHalf >.weatherLocation{
@@ -65,7 +71,6 @@ div{
 	margin: 0;
 	padding: 0;
 	top: 75%;
-	transform: translateX(3%);
 }
 
 .rightCard{

@@ -51,6 +51,7 @@ const sliceFn = createSlice({
             state.widgetData.weather = action.payload.weather;
             state.widgetData.wind = action.payload.wind;
         }
+
     }
 });
 
