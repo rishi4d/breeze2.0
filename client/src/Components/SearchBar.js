@@ -84,27 +84,32 @@ function SearchBar({placeholder}){
     const fetchWeatherData = (lat, lng) => {
         const apiKey = '0e7091f685572031515151c75d4d1057';
         let currentWeatherData = {};
+        let forecastData = {};
 
-        let URL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lng + '&units=metric&appid=' + apiKey;
-        fetch(URL)
+        let URL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lng + '&units=metric&appid=' + apiKey;   
+        fetch(URL)                          //CurrentWeatherAPI
         .then((res) => res.json())
         .then((response) => {
             console.log(response);
             document.querySelector('.searchInputs > input').value = response.name;
             currentWeatherData = response;
-            dispatch(action.setWidgetData(currentWeatherData));
+            dispatch(action.setCurrentWeatherData(currentWeatherData));
         })
-        /*
-        let URL2 = 'https://api.openweathermap.org/data/2.5/forecast/daily?lat='+ lat +'&lon='+ lng +'&cnt=1&appid=' + apiKey;
-        fetch(URL)                  //Created bcz of API limitation
+        
+        let URL2 = 'https://api.openweathermap.org/data/2.5/forecast?lat='+ lat +'&lon='+ lng +'&units=metric&cnt=40&appid=' + apiKey;
+        fetch(URL2)                          //ForecastAPI      
         .then((res) => res.json())
         .then((res) => {
             console.log(res);
+            forecastData = res;
+
+            /*      Added to implement temp_min, temp_max that is not supported by CurrentWeatherAPI.
             currentWeatherData.main.temp_min = res.list.temp.min;
             currentWeatherData.main.temp_max = res.list.temp.max;
             dispatch(action.setWidgetData(currentWeatherData));
+            */
+            dispatch(action.setForecastData(forecastData));
         })
-        */
     }
 
     /* This fn was added to hide the searchResults on clicking elsewhere. Doesn't work as intended.
