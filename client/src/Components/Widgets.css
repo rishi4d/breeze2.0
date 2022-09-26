@@ -41,6 +41,7 @@ div{
 	margin: 0;
 	padding: 0;
 	left: 50%;
+	top: 80%;
 	transform: translate(-50%, -50%);
 	font-size: 24px;
 	width: max-content;
@@ -49,6 +50,7 @@ div{
 .leftCard > .firHalf > .mainIcon{
 	margin: 0;
 	padding: 0;
+	top: 30%;
 }
 
 .leftCard > .secHalf > .currentTemp{
@@ -122,6 +124,7 @@ div{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	align-items: center;
 	background: rgba(299, 299, 299, 0.1);
 	border-radius: 30px;
 	backdrop-filter: blur(20px);
@@ -131,12 +134,25 @@ div{
 	display: inline-block;
 	margin: 0;
 	padding: 0 2%;
+	border: solid;
 }
 
 .forecastCard > .items > p{
+	position: relative;
 	font-size: smaller;
 	font-weight: 400;
 	margin: 0;
 	padding: 0;
-	width: max-content;
+	width: 100%;
+	text-align: center;
+	background-color: aliceblue;
 }
+
+.forecastCard > .items > .daysTransform{
+	position: relative;
+	transform: translateX(100%);
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+

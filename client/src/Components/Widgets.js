@@ -42,11 +42,21 @@ function Widgets() {
             </div>
             <div className='forecastCard'>
                 {forecastData.list.filter((value, index) => index % 4 === 0).map((value, index) => {
+
                     return (
-                        <div className='items'>
-                            <p style={{fontWeight:600}}>{(forecastData.list.length > 1) ? value.day.substring(0,3) : forecastData.list[0].day.substring(0, 3)}</p>
-                            <p>{new Date(value.dt * 1000).toLocaleString('en-IN', {hour: 'numeric', hour12: 'true'})}</p>
-                            <p>{Math.floor(value.main.feels_like)}c</p>
+                        <div className='items' key={value.dt}>
+                            {(forecastData.list.length > 1 && forecastData.list[index - 1] != undefined && forecastData.list[(index+1) * 4] != undefined) ? 
+                            
+                            ((value.day === forecastData.list[(index-1) * 4].day) ? 
+                            <p style={{ fontWeight: 600, visibility: 'hidden' }}>{value.day.substring(0, 3)}</p> : 
+                            <p className='daysTransform' style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>) : 
+                            
+                            <p style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>}
+                            <p>{new Date(value.dt * 1000).toLocaleString('en-IN', { hour: 'numeric', hour12: 'true' })}</p>
+                            <p>{new Date(value.dt * 1000).toLocaleString('en-IN', { hour: 'numeric', hour12: 'true' })}</p>
+
+                            <p>{new Date(value.dt * 1000).toLocaleString('en-IN', { hour: 'numeric', hour12: 'true' })}</p>
+                            <p>{Math.floor(value.main.feels_like)}&deg;c</p>
                         </div>
                     );
                 })}

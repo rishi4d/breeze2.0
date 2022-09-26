@@ -1,7 +1,8 @@
 .weatherIcon{
     position: relative;
     width: 60%;
-    height: 80%;
+    height: 50%;
+    top: 15%;
     left: 50%;
     margin: 0;
     padding: 0;
