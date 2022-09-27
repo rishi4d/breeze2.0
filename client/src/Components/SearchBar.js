@@ -13,7 +13,7 @@ function SearchBar({placeholder}){
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        let URL = 'https://autocomplete.search.hereapi.com/v1/autocomplete?politicalView=IND&in=countryCode:IND&apiKey=JdBdUE5eNBbyCadwyJyUu0tyeULzwbJ0VsZoOeeJQ9U&types=city&q='+ searchKeyword;
+        let URL = 'https://autocomplete.search.hereapi.com/v1/autocomplete?politicalView=IND&in=countryCode:IND,USA,FRA,RUS,ISR,JPN,MUS&apiKey=JdBdUE5eNBbyCadwyJyUu0tyeULzwbJ0VsZoOeeJQ9U&types=city&q='+ searchKeyword;
 
         if(searchKeyword.length > 0)
             fetch(URL)
@@ -42,6 +42,10 @@ function SearchBar({placeholder}){
 
     }, [searchKeyword]);
 
+    useEffect(()=>{
+        getGPSLocation();
+    }, []);
+
     document.body.addEventListener('keydown', (e) => (e.key == 'Escape') && dispatch(action.setSearchKeyword('')) )
 
     const getGPSLocation = () => {
@@ -68,7 +72,7 @@ function SearchBar({placeholder}){
         document.querySelector('.searchInputs > input').value = 'Please Wait ...';
 
         const apiKey = 'WjU2LPBQ7lrHN6GtqwhIbtfEPqr1ASjRLcdm0S7MC9s';
-        let URL = 'https://geocode.search.hereapi.com/v1/geocode?q=' + city + '&in=countryCode:IND&types=city&limit=4&apiKey=' + apiKey;
+        let URL = 'https://geocode.search.hereapi.com/v1/geocode?q=' + city + '&in=countryCode:IND,USA,FRA,RUS,ISR,JPN,MUS&types=city&limit=4&apiKey=' + apiKey;
         let lat = 0;
         let lng = 0;
 

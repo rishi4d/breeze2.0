@@ -17,11 +17,20 @@ function Widgets() {
             .then((res) => setImageURL(URL.createObjectURL(res)))
     }, []);
 
+    function convertUTCDateToLocalDate(dateString) {
+        let newDate = new Date((dateString+forecastData.city.timezone)*1000);
+        var utc =new Date(Date.UTC(newDate.getUTCFullYear(), newDate.getUTCMonth(),
+        newDate.getUTCDate(), newDate.getUTCHours(),
+        newDate.getUTCMinutes(), newDate.getUTCSeconds()));
+        console.log(utc);
+        return utc;   
+    }
+
     return (
         <div>
             <div className='leftCard'>
                 <div className='firHalf'>
-                    <Image className='mainIcon' imageURL={'cloud.png'}></Image>
+                    <Image className='mainIcon' imageURL={'sun.png'}></Image>
                     <p className='weatherStatus'>{currentWeatherData.weather[0].description}</p>
                 </div>
                 <div className='secHalf'>
@@ -42,20 +51,32 @@ function Widgets() {
             </div>
             <div className='forecastCard'>
                 {forecastData.list.filter((value, index) => index % 4 === 0).map((value, index) => {
-
                     return (
                         <div className='items' key={value.dt}>
-                            {(forecastData.list.length > 1 && forecastData.list[index - 1] != undefined && forecastData.list[(index+1) * 4] != undefined) ? 
+
+                            {((forecastData.list.length > 1 && forecastData.list[(index + 1) * 4] !== undefined)
+                            ?((value.day === forecastData.list[(index + 1) * 4].day) 
+                                ?(<p className='daysTransform' style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>) 
+                                    :((forecastData.list[(index - 1) * 4] !== undefined) 
+                                        ?(<p style={{ fontWeight: 600, visibility: 'hidden' }}>{value.day.substring(0, 3)}</p>) 
+                                        :(<p style={{ fontWeight: 600}}>{value.day.substring(0, 3)}</p>)))
+                            :((index!=0 && forecastData.list[(index - 1) * 4].day === value.day) 
+                                ?(<p style={{ fontWeight: 600, visibility: 'hidden' }}>{value.day.substring(0, 3)}</p>) 
+                                :<p style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>))}
+
                             
-                            ((value.day === forecastData.list[(index-1) * 4].day) ? 
+                            {/*
+                            {(forecastData.list.length > 1 && forecastData.list[(index+1) * 4] != undefined) ? 
+                            
+                            ((value.day === forecastData.list[(index+1) * 4].day) ? 
                             <p style={{ fontWeight: 600, visibility: 'hidden' }}>{value.day.substring(0, 3)}</p> : 
                             <p className='daysTransform' style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>) : 
                             
-                            <p style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>}
-                            <p>{new Date(value.dt * 1000).toLocaleString('en-IN', { hour: 'numeric', hour12: 'true' })}</p>
-                            <p>{new Date(value.dt * 1000).toLocaleString('en-IN', { hour: 'numeric', hour12: 'true' })}</p>
+                            <p style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>}*/}
 
-                            <p>{new Date(value.dt * 1000).toLocaleString('en-IN', { hour: 'numeric', hour12: 'true' })}</p>
+
+                            <p>{convertUTCDateToLocalDate(value.dt).getHours()}</p>
+
                             <p>{Math.floor(value.main.feels_like)}&deg;c</p>
                         </div>
                     );

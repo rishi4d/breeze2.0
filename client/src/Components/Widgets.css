@@ -134,7 +134,6 @@ div{
 	display: inline-block;
 	margin: 0;
 	padding: 0 2%;
-	border: solid;
 }
 
 .forecastCard > .items > p{
@@ -145,7 +144,6 @@ div{
 	padding: 0;
 	width: 100%;
 	text-align: center;
-	background-color: aliceblue;
 }
 
 .forecastCard > .items > .daysTransform{
