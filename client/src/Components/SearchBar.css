@@ -11,7 +11,6 @@
 	position: relative;
 	display: inline-block;
 	margin-bottom: 0;
-	backdrop-filter: blur(25px);
 }
 
 .searchBar > .searchInputs > input{
@@ -26,6 +25,7 @@
 	font-weight: 500;
 	background: rgba(299, 299, 299, 0.2);
 	color: rgb(60, 235, 185);
+	backdrop-filter: blur(25px);
 }
 
 .searchBar > .searchInputs > input[type="text"]{
@@ -55,6 +55,8 @@
 	align-self: flex-start;
 	border-radius: 0 15px 15px 0;
 	background: rgba(299, 299, 299, 0.2);
+	backdrop-filter: blur(25px);
+
 }
 
 
