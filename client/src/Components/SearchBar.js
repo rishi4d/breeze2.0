@@ -53,9 +53,13 @@ function SearchBar({placeholder}){
             navigator.geolocation.getCurrentPosition((position) => {
                 document.querySelector('.searchInputs > input').value = 'Please Wait ...';
                 fetchWeatherData(position.coords.latitude, position.coords.longitude);
-            }, () => alert("Unable to retrieve your location. Please enable/allow location services for your browser."));
+            }, () => {
+                fetchWeatherData(22.422, 87.3298);  //default
+                alert("Unable to retrieve your location. Please enable/allow location services for your browser.");
+            });
         }
         else{
+            fetchWeatherData(22.422, 87.3298);  //default
             alert("Geolocation is not supported by your browser.");
         }
     }

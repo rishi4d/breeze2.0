@@ -44,7 +44,10 @@ div{
 	top: 80%;
 	transform: translate(-50%, -50%);
 	font-size: 24px;
-	width: max-content;
+	width: 100%;
+	inline-size: 70%;
+	overflow-wrap: break-word;
+	text-align: center;
 }
 
 .leftCard > .firHalf > .mainIcon{
@@ -77,6 +80,10 @@ div{
 	margin: 0;
 	padding: 0;
 	top: 75%;
+	width: 100%;
+	inline-size: 80%;
+	overflow-wrap: break-word;
+
 }
 
 .rightCard{
@@ -144,11 +151,18 @@ div{
 	padding: 0;
 	width: 100%;
 	text-align: center;
+	transform: translateY(-30%);
+}
+
+.forecastCard > .items > .forecastDays{
+	position: relative;
+	transform: translateY(25%);
 }
 
 .forecastCard > .items > .daysTransform{
 	position: relative;
-	transform: translateX(100%);
+	transform: translate(76%, 28%);
+	left: 2%;
 	margin: 0;
 	padding: 0;
 	width: 100%;
