@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Widgets.css';
 import { useSelector } from 'react-redux';
-import { action } from '../store/redux_store';
+//import { action } from '../store/redux_store';
 import Image from './Image';
 import ForecastIcon from './ForecastIcon';
 
@@ -16,19 +16,26 @@ function Widgets() {
 
     const weatherCode = new Map([
         ['Thunderstorm', ['storm.png', 'storm.png']],
-        ['Drizzle', ['rain.png', 'rain.png']],
-        ['Rain', ['rainy.png', 'rainy.png']],
+        ['Drizzle', ['lightrain.png', 'lightrain.png']],
+        ['Rain', ['rainy.png', 'rain.png']],
         ['Snow', ['snowflake.png', 'snowflake.png']],
-        ['Clear', ['sun.png', 'moon.png']],
-        ['Clouds', ['clouds.png', 'clouds.png']]
+        ['Clear', ['sun.png', 'night1.png']],
+        ['Clouds', ['clouds.png', 'cloudy.png']],
+        ['Mist', ['mist.png', 'mist.png']],
+        ['Haze', ['haze.png', 'haze.png']],
+        ['Fog', ['fog.png', 'fog.png']],
+        ['Smoke', ['fog2.png', 'fog2.png']],
+        ['Dust', ['wind.png', 'wind.png']],
     ]);
 
+    /*
     useEffect(() => {
         fetch('https://openweathermap.org/img/wn/11d@2x.png')
             .then((res) => res.blob())
             .then((res) => setImageURL(URL.createObjectURL(res)))
 
     }, []);
+    */
 
     function convertUTCDateToLocalDate(dateString) {
         //console.log(dateString);
@@ -44,7 +51,7 @@ function Widgets() {
             <div className='leftCard'>
                 <div className='firHalf'>
 
-                <Image className='mainIcon' imageURL={require('../assets/'+ `${weatherCode.get(currentWeatherData.weather[0].main)[(time >= 6 && time <= 18) ? 0 : 1]}`)}></Image>
+                <Image className='mainIcon' imageURL={require('../assets/icons/'+ `${weatherCode.get(currentWeatherData.weather[0].main)[(time >= 6 && time <= 18) ? 0 : 1]}`)}></Image>
 
                     <p className='weatherStatus'>{currentWeatherData.weather[0].description}</p>
                 </div>
@@ -85,7 +92,7 @@ function Widgets() {
                             <p style={{ fontWeight: 600, visibility: 'hidden' }}>{value.day.substring(0, 3)}</p> : 
                             <p className='daysTransform' style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>) : 
                             <p style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>}*/}
-                            <ForecastIcon className='forecastIcon' imageURL={require('../assets/'+ `${weatherCode.get(value.weather[0].main)[(time / 12 <= 1) ? 0 : 1]}`)}></ForecastIcon>
+                            <ForecastIcon className='forecastIcon' imageURL={require('../assets/icons/'+ `${weatherCode.get(value.weather[0].main)[(time >= 6 && time < 18) ? 0 : 1]}`)}></ForecastIcon>
                             <p>{time % 12 || '12'} {(time / 12 <= 1) ? 'AM' : 'PM'}</p>
                             <p>{Math.floor(value.main.feels_like)}&deg;c</p>
                         </div>

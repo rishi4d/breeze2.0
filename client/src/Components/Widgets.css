@@ -126,7 +126,7 @@ div{
 	position: absolute;
 	top: 70%;
 	left: 20%;
-	height: 15vh;
+	height: 18vh;
 	width: 60vw;
 	display: flex;
 	flex-direction: row;
@@ -151,17 +151,22 @@ div{
 	padding: 0;
 	width: 100%;
 	text-align: center;
-	transform: translateY(-30%);
+	transform: translateY(5%);
+}
+
+.forecastCard > .items > .forecastIcon{
+	position: relative;
+	transform: translateY(10%);
 }
 
 .forecastCard > .items > .forecastDays{
 	position: relative;
-	transform: translateY(25%);
+	transform: translateY(10%);
 }
 
 .forecastCard > .items > .daysTransform{
 	position: relative;
-	transform: translate(76%, 28%);
+	transform: translate(76%, 10%);
 	left: 2%;
 	margin: 0;
 	padding: 0;
