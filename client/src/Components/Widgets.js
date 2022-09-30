@@ -65,7 +65,7 @@ function Widgets() {
                 </div>
             </div>
             <div className='forecastCard'>
-                {forecastData.list.filter((value, index) => index % 4 === 0).map((value, index) => {
+                {forecastData.list.length > 1 && forecastData.list.filter((value, index) => index % 4 === 0).map((value, index) => {
                     let time = convertUTCDateToLocalDate(value.dt).getUTCHours();
                     return (
                         <div className='items' key={value.dt}>

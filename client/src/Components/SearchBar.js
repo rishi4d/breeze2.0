@@ -56,6 +56,7 @@ function SearchBar({placeholder}){
             }, () => {
                 fetchWeatherData(22.422, 87.3298);  //default
                 alert("Unable to retrieve your location. Please enable/allow location services for your browser.");
+                document.querySelector('.searchInputs > input').value = 'Setting Default Location ...';
             });
         }
         else{
@@ -68,9 +69,12 @@ function SearchBar({placeholder}){
         dispatch(action.setSearchKeyword(event.target.value));
     }
 
-    const geocodeLocation = (e, city) => {
+    const geocodeLocation = (e = null, city = null) => {
+        if(city == null)
+            city = document.querySelector('.cityName').value;
+        else
+            e.preventDefault();
 
-        e.preventDefault();
         dispatch(action.setSearchKeyword(''));
         dispatch(action.setSearchResults({ items: [] })); //erasing searchResults in redux store.
         document.querySelector('.searchInputs > input').value = 'Please Wait ...';
@@ -133,13 +137,13 @@ function SearchBar({placeholder}){
     return (
         <div className="searchBar">
             <div className="searchInputs">
-                <input type="text" placeholder={placeholder} onChange={handleSearchKeyword} />
+                <input type="text" className="cityName" placeholder={placeholder} onChange={handleSearchKeyword} />
                 <div className="searchButtons">
                     <div className="gpsIcon">
                         <button onClick={getGPSLocation}><GPSIcon fontSize="large"/></button>
                     </div>
                     <div className="searchIcon">
-                        <button><SearchIcon fontSize="large"/></button>
+                        <button onClick={geocodeLocation}><SearchIcon fontSize="large"/></button>
                     </div>
                 </div>
             </div>

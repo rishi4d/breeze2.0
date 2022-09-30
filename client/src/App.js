@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import BackdropFilter from 'react-backdrop-filter';
 import Blur from "react-blur";
-import image from './assets/res/images/bg-1.jpg';
+import image from './assets/res/images/bg.jpg';
 
 function App() {
 
