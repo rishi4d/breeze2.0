@@ -11,8 +11,8 @@ function Widgets() {
     const forecastData = useSelector((state) => state.forecastData);
     console.log(currentWeatherData);
     console.log(forecastData);
-    const [imageURL, setImageURL] = useState();
-    let time = convertUTCDateToLocalDate(forecastData.list[0].dt).getUTCHours() - 3;
+    //const [imageURL, setImageURL] = useState();
+    //let time = convertUTCDateToLocalDate(forecastData.list[0].dt).getUTCHours() - 3;
 
     //let currentTime = convertUTCDateToLocalDate(currentWeatherData.dt).getUTCHours() + convertUTCDateToLocalDate(currentWeatherData.dt).getUTCMinutes;
 

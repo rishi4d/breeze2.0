@@ -46,7 +46,7 @@ function SearchBar({placeholder}){
         getGPSLocation();
     }, []);
 
-    document.body.addEventListener('keydown', (e) => (e.key == 'Escape') && dispatch(action.setSearchKeyword('')) )
+    document.body.addEventListener('keydown', (e) => (e.key === 'Escape') && dispatch(action.setSearchKeyword('')) )
 
     const getGPSLocation = () => {
         if(navigator.geolocation){
