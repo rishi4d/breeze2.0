@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BackdropFilter from 'react-backdrop-filter';
 import Blur from "react-blur";
 import { useSelector } from 'react-redux';
+//import './App.css';
 
 function App() {
   const currentWeatherData = useSelector((state) => state.currentWeatherData);

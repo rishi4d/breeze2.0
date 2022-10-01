@@ -17,6 +17,7 @@ const sliceFn = createSlice({
             humidity: 26,
             name: "Medinīpur",
             country: "IN",
+            dt: 940896000,
             sunrise: 1662681341, 
             sunset: 1662726061,
             timezone: 19800,
@@ -65,7 +66,7 @@ const sliceFn = createSlice({
                     "dt_txt": "2022-09-25 15:00:00"
                 }
             ],
-            "city": {
+            city: {
                 "id": 1263220,
                 "name": "Medinīpur",
                 "coord": {
@@ -103,6 +104,7 @@ const sliceFn = createSlice({
             state.currentWeatherData.sea_level = action.payload.main.sea_level;
             state.currentWeatherData.humidity = action.payload.main.humidity;
             state.currentWeatherData.country = action.payload.sys.country;
+            state.currentWeatherData.dt = action.payload.dt;
             state.currentWeatherData.sunrise = action.payload.sys.sunrise;
             state.currentWeatherData.sunset = action.payload.sys.sunset;
             state.currentWeatherData.timezone = action.payload.timezone;

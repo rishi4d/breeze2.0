@@ -14,6 +14,8 @@ function Widgets() {
     const [imageURL, setImageURL] = useState();
     let time = convertUTCDateToLocalDate(forecastData.list[0].dt).getUTCHours() - 3;
 
+    //let currentTime = convertUTCDateToLocalDate(currentWeatherData.dt).getUTCHours() + convertUTCDateToLocalDate(currentWeatherData.dt).getUTCMinutes;
+
     const weatherCode = new Map([
         ['Thunderstorm', ['storm.png', 'storm.png']],
         ['Drizzle', ['lightrain.png', 'lightrain.png']],
@@ -40,10 +42,10 @@ function Widgets() {
     function convertUTCDateToLocalDate(dateString) {
         //console.log(dateString);
         //console.log(forecastData.city.timezone);
-        let newDate = new Date((dateString+forecastData.city.timezone)*1000);
-        var utc =new Date(Date.UTC(newDate.getUTCFullYear(), newDate.getUTCMonth(), newDate.getUTCDate(), newDate.getUTCHours(), newDate.getUTCMinutes(), newDate.getUTCSeconds()));
+        let newDate = new Date((dateString + forecastData.city.timezone) * 1000);
+        var utc = new Date(Date.UTC(newDate.getUTCFullYear(), newDate.getUTCMonth(), newDate.getUTCDate(), newDate.getUTCHours(), newDate.getUTCMinutes(), newDate.getUTCSeconds()));
         //console.log(utc);
-        return utc;   
+        return utc;
     }
 
     return (
@@ -51,7 +53,7 @@ function Widgets() {
             <div className='leftCard'>
                 <div className='firHalf'>
 
-                <Image className='mainIcon' imageURL={require('../assets/icons/'+ `${weatherCode.get(currentWeatherData.weather[0].main)[(time >= 6 && time <= 18) ? 0 : 1]}`)}></Image>
+                    <Image className='mainIcon' imageURL={require('../assets/icons/' + `${weatherCode.get(currentWeatherData.weather[0].main)[(currentWeatherData.dt >= currentWeatherData.sunrise && currentWeatherData.dt <= currentWeatherData.sunset) ? 0 : 1]}`)}></Image>
 
                     <p className='weatherStatus'>{currentWeatherData.weather[0].description}</p>
                 </div>
@@ -77,14 +79,14 @@ function Widgets() {
                     return (
                         <div className='items' key={value.dt}>
                             {((forecastData.list.length > 1 && forecastData.list[(index + 1) * 4] !== undefined)
-                            ?((value.day === forecastData.list[(index + 1) * 4].day) 
-                                ?(<p className='daysTransform' style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>) 
-                                    :((forecastData.list[(index - 1) * 4] !== undefined) 
-                                        ?(<p className='forecastDays' style={{ fontWeight: 600, visibility: 'hidden' }}>{value.day.substring(0, 3)}</p>) 
-                                        :(<p className='forecastDays' style={{ fontWeight: 600}}>{value.day.substring(0, 3)}</p>)))
-                            :((index!==0 && forecastData.list[(index - 1) * 4].day === value.day) 
-                                ?(<p className='forecastDays' style={{ fontWeight: 600, visibility: 'hidden' }}>{value.day.substring(0, 3)}</p>) 
-                                :<p className='forecastDays' style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>))}
+                                ? ((value.day === forecastData.list[(index + 1) * 4].day)
+                                    ? (<p className='daysTransform' style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>)
+                                    : ((forecastData.list[(index - 1) * 4] !== undefined)
+                                        ? (<p className='forecastDays' style={{ fontWeight: 600, visibility: 'hidden' }}>{value.day.substring(0, 3)}</p>)
+                                        : (<p className='forecastDays' style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>)))
+                                : ((index !== 0 && forecastData.list[(index - 1) * 4].day === value.day)
+                                    ? (<p className='forecastDays' style={{ fontWeight: 600, visibility: 'hidden' }}>{value.day.substring(0, 3)}</p>)
+                                    : <p className='forecastDays' style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>))}
 
                             {/*
                             {(forecastData.list.length > 1 && forecastData.list[(index+1) * 4] != undefined) ?
@@ -92,7 +94,7 @@ function Widgets() {
                             <p style={{ fontWeight: 600, visibility: 'hidden' }}>{value.day.substring(0, 3)}</p> : 
                             <p className='daysTransform' style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>) : 
                             <p style={{ fontWeight: 600 }}>{value.day.substring(0, 3)}</p>}*/}
-                            <ForecastIcon className='forecastIcon' imageURL={require('../assets/icons/'+ `${weatherCode.get(value.weather[0].main)[(time >= 6 && time < 18) ? 0 : 1]}`)}></ForecastIcon>
+                            <ForecastIcon className='forecastIcon' imageURL={require('../assets/icons/' + `${weatherCode.get(value.weather[0].main)[(time >= 6 && time < 18) ? 0 : 1]}`)}></ForecastIcon>
                             <p>{time % 12 || '12'} {(time / 12 <= 1) ? 'AM' : 'PM'}</p>
                             <p>{Math.floor(value.main.feels_like)}&deg;c</p>
                         </div>
