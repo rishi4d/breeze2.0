@@ -1,6 +1,6 @@
 This is a port of my older Weather Forecasting implementation <b>Breeze</b> with planned extensive UI revamps, built with React, now live on GCP.
 
-[Breeze]{breeze.rishi4d.in}
+[Breeze](breeze.rishi4d.in)
 
 Thanks for reading.
 
