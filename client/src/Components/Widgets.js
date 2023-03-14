@@ -49,8 +49,8 @@ function Widgets() {
     }
 
     return (
-        <div>
-            <div className='leftCard'>
+        <div className='res'>
+            <div className='leftCard flex items-center'>
                 <div className='firHalf'>
 
                     <Image className='mainIcon' imageURL={require('../assets/icons/' + `${weatherCode.get(currentWeatherData.weather[0].main)[(currentWeatherData.dt >= currentWeatherData.sunrise && currentWeatherData.dt <= currentWeatherData.sunset) ? 0 : 1]}`)}></Image>

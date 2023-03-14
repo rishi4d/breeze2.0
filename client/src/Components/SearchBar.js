@@ -135,7 +135,7 @@ function SearchBar({placeholder}){
     */
 
     return (
-        <div className="searchBar">
+        <div className="searchBar flex items-center">
             <div className="searchInputs">
                 <input type="text" className="cityName" placeholder={placeholder} onChange={handleSearchKeyword} />
                 <div className="searchButtons">

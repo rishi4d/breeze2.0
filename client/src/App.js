@@ -44,10 +44,10 @@ function App() {
   }, [currentWeatherData]);
 
 return (
-  <div className="App">
+  <div className="App flex">
     <Blur className="bg" img={require('./assets/backgrounds/' + imgPath)} blurRadius={25} enableStyles></Blur>
-    <div class="branding">
-      <h1 style={{ fontSize: 60 }}>Breeze</h1>
+    <div class="branding flex items-center">
+      <h1 className='text-6xl'>Breeze</h1>
     </div>
   </div>
 );

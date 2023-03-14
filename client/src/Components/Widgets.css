@@ -98,7 +98,6 @@ div{
 }
 
 .rightCard > .container {
-
 	position: absolute;
 	top: 50%;
 	width: 100%;
@@ -107,9 +106,10 @@ div{
 
 .rightCard > .container > p{
 	padding: 1.1% 10%;
-	width: 78%;
+	width: 100%;
 	margin: 0;
 	font-weight: 400;
+	
 }
 
 .rightCard > .container > p > span{
@@ -171,4 +171,43 @@ div{
 	margin: 0;
 	padding: 0;
 	width: 100%;
+}
+
+/* mobile responsive */
+@media screen and (max-width: 640px) {
+
+	.leftCard{
+		position: absolute;
+		top: 28%;
+		left: 5%;
+		height: 33vh;
+		width: 90vw;
+		background: rgba(299, 299, 299, 0.1);
+		border-radius: 30px;
+		backdrop-filter: blur(20px);
+	}
+	.rightCard{
+		position: absolute;
+		top: 30%;
+		right: 18%;
+		height: 33vh;
+		width: 25vw;
+		background: rgba(299, 299, 299, 0.1);
+		border-radius: 30px;
+		backdrop-filter: blur(20px);
+	}
+	.forecastCard{
+		position: absolute;
+		top: 70%;
+		left: 20%;
+		height: 18vh;
+		width: 60vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		background: rgba(299, 299, 299, 0.1);
+		border-radius: 30px;
+		backdrop-filter: blur(20px);
+	}
 }
