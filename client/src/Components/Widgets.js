@@ -58,7 +58,7 @@ function Widgets() {
                     <p className='weatherStatus'>{currentWeatherData.weather[0].description}</p>
                 </div>
                 <div className='secHalf'>
-                    <p className='currentTemp'>{Math.floor(currentWeatherData.temp)}<span style={{ fontSize: '40px', verticalAlign: 'top', lineHeight: '90px' }}>&deg;</span><span style={{ fontSize: '60px' }}>C</span></p>
+                    <p className='currentTemp'>{Math.floor(currentWeatherData.temp)}<span className='degree' style={{ fontSize: '40px', verticalAlign: 'top', lineHeight: '90px' }}>&deg;</span><span style={{ fontSize: '60px' }}>C</span></p>
                     <p className='tempRange'><span className='arrow'>&#8673;</span> {currentWeatherData.temp_max.toFixed(1)}<span style={{ fontSize: '16px' }}>C</span> &nbsp; &#8675; {currentWeatherData.temp_min.toFixed(1)}<span style={{ fontSize: '16px' }}>C</span></p>
                     <p className='weatherLocation'>{currentWeatherData.name}, {currentWeatherData.country}</p>
                 </div>

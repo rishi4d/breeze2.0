@@ -65,6 +65,10 @@ div{
 	padding: 0;
 }
 
+.leftCard > .secHalf > .currentTempDeg{
+	font-size: 60px;
+}
+
 .leftCard > .secHalf > .tempRange{
 	position: absolute;
 	font-family: 'Poppins', sans-serif;
@@ -83,7 +87,6 @@ div{
 	width: 100%;
 	inline-size: 80%;
 	overflow-wrap: break-word;
-
 }
 
 .rightCard{
@@ -109,7 +112,6 @@ div{
 	width: 100%;
 	margin: 0;
 	font-weight: 400;
-	
 }
 
 .rightCard > .container > p > span{
@@ -180,25 +182,67 @@ div{
 		position: absolute;
 		top: 28%;
 		left: 5%;
-		height: 33vh;
+		height: 25vh;
 		width: 90vw;
 		background: rgba(299, 299, 299, 0.1);
 		border-radius: 30px;
 		backdrop-filter: blur(20px);
 	}
+
+	.leftCard > .firHalf{
+		width: 52%;
+	}
+
+	.leftCard > .firHalf > .weatherStatus{
+		position: absolute;
+		font-family: 'Quicksand', sans-serif;
+		font-size: 24px;
+		line-height: 100%;
+	}
+
+	.leftCard > .secHalf > .tempRange{
+		font-size: 18px !important;
+		transform: translateX(-6%);
+	}
+
+	.leftCard > .secHalf > .currentTemp{
+		position: absolute;
+		font-family: 'Poppins', sans-serif;
+		top: 5%;
+		font-size: 75px;
+		margin: 0;
+		padding: 0;
+	}
+
+	.leftCard > .secHalf > .currentTemp > .degree{
+		font-size: 36px !important;
+	}
+
+	.leftCard > .secHalf > .currentTemp > span{
+		font-size: 42px !important;
+	}
+
+	.leftCard > .secHalf >.weatherLocation{
+		font-size: 18px;
+		transform: translateY(-15%);
+	}
+
 	.rightCard{
 		position: absolute;
-		top: 30%;
-		right: 18%;
-		height: 33vh;
-		width: 25vw;
-		background: rgba(299, 299, 299, 0.1);
-		border-radius: 30px;
-		backdrop-filter: blur(20px);
+		margin-top: 3%;
+		top: 56%;
+		height: 30vh;
+		width: 90vw;
+		right: 5%;
 	}
+
+	.rightCard > .container > p{
+		padding: 0.6% 10%;
+	}
+	
 	.forecastCard{
 		position: absolute;
-		top: 70%;
+		top: 100%;
 		left: 20%;
 		height: 18vh;
 		width: 60vw;
