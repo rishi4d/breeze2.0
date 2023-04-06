@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import SearchBar from './Components/SearchBar';
 import Widgets from './Components/Widgets';
+import Footer from './Components/Footer';
 import { Provider } from 'react-redux';
 import store from './store/redux_store';
 
@@ -23,6 +24,7 @@ root.render(
     <App />
     <SearchBar placeholder="Type in your location"/>
     <Widgets />
+    <Footer />
   </React.StrictMode>
   </Provider>
 );

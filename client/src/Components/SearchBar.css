@@ -4,11 +4,12 @@
 	top: 15%;
 	left: 50%;
 	display: inline-grid;
+	transform: translateX(-50%);
+	z-index: 10;
 }
 
 .searchBar > .searchInputs {
 	height: max-content;
-	transform: translateX(-50%);
 	position: relative;
 	display: inline-block;
 	margin-bottom: 0;
@@ -123,14 +124,12 @@
 	margin-top: 0;
 	padding-bottom: 1vh;
 	border-radius: 0 0 30px 30px;
-	transform: translateX(-50%);
 	font-family: 'Raleway', sans-serif;
 	font-weight: 600;
 	background: rgba(299, 299, 299, 0.15);
 	color: rgb(60, 235, 185);
 	overflow: hidden;
 	overflow-y: auto;
-	z-index: 2;
 	backdrop-filter: blur(25px);
 }
 
