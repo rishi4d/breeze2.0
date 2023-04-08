@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable no-useless-concat */
+import React from 'react';
 import './Widgets.css';
 import { useSelector } from 'react-redux';
 //import { action } from '../store/redux_store';

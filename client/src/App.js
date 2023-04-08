@@ -40,7 +40,7 @@ function App() {
       default:
         setImgPath('bg.png');
     }
-    console.log(imgPath);
+    //console.log(imgPath);
   }, [currentWeatherData]);
 
 return (

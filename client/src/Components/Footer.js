@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
   return (
     <div className="footer">
-      <p style={{fontFamily: "Poppins"}}>made by <a href='https://github.com/rishi4d' target='_blank'>Rishi Ghosh</a></p>
+      <p style={{fontFamily: "Poppins"}}>made by <a href='https://github.com/rishi4d' target='_blank' rel="noreferrer">Rishi Ghosh</a></p>
     </div>
   );
 }
