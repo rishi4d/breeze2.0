@@ -29,6 +29,7 @@
 	color: rgb(88, 240, 210);
 	text-shadow: 1px 0.5px 1px #60606080;
 	backdrop-filter: blur(25px);
+	box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.1);
 }
 
 .searchBar > .searchInputs > input[type="text"]{
@@ -60,6 +61,7 @@
 	border-radius: 0 15px 15px 0;
 	background: rgba(299, 299, 299, 0.15);
 	backdrop-filter: blur(25px);
+	box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.1);
 }
 
 
@@ -131,6 +133,7 @@
 	overflow: hidden;
 	overflow-y: auto;
 	backdrop-filter: blur(25px);
+	box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.1);
 }
 
 .searchBar > .searchResults > a{

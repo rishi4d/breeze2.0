@@ -1,0 +1,27 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+    right: 10vw;
+}
+
+.footer > p{
+    font-size: 14px;
+    text-shadow: 1px 1px 3px #50505080;
+    backdrop-filter: blur(1px);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.footer > p > a{
+    font-size: 18px;
+    color: rgb(118, 184, 255);
+}
+
+.footer > p > a:hover{
+    color: rgb(20, 49, 212);
+}
+
+@media screen and (max-width: 640px) {
+    .footer{
+        right: 5vw;
+    }
+}
