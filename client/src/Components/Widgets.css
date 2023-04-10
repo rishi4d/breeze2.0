@@ -28,6 +28,7 @@ div{
 }
 
 .secHalf{
+	position: relative;
 	display: inline-block;
 	width: 45%;
 	height: 100%;
@@ -85,7 +86,7 @@ div{
 	margin: 0;
 	padding: 0;
 	top: 75%;
-	width: min-content;
+	width: fit-content;
 	inline-size: 80%;
 	overflow-wrap: break-word;
 }
