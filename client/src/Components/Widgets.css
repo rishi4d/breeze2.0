@@ -46,8 +46,7 @@ div{
 	top: 80%;
 	transform: translate(-50%, -50%);
 	font-size: 24px;
-	width: 100%;
-	inline-size: 70%;
+	width: 80%;
 	overflow-wrap: break-word;
 	text-align: center;
 }
